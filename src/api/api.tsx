@@ -8,9 +8,9 @@ const getInstance = () => {
 
 export const postsApi = {
 
-    getPosts: (page: number, per_page: number) => {
+    getPosts: (_start: number, _limit: number) => {
         return getInstance()
-            .get(`/posts`, {params: {per_page, page}})
+            .get(`/posts`, {params: {_start, _limit}})
             .then((res) => res.data)
             .catch(({response}) => {
                 throw response.data;
