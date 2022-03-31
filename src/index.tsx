@@ -4,7 +4,6 @@ import App from './App';
 
 const container = document.getElementById('root');
 
-// Create a root.
 const root = ReactDOMClient.createRoot(container as HTMLElement);
 
 root.render(<App/>);
