@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6dfeaeaf-236f-4b98-86be-b9b6535c2bf6" name="Changes" comment="custom card, style">
+    <list default="true" id="6dfeaeaf-236f-4b98-86be-b9b6535c2bf6" name="Changes" comment="style">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/customCard/CustomCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/customCard/CustomCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/customCard/useStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/customCard/useStyles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/homePage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/HomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homePage/useStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/useStyles.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +72,7 @@
       <workItem from="1648661705689" duration="6464000" />
       <workItem from="1648736620132" duration="23478000" />
       <workItem from="1648781245960" duration="1930000" />
-      <workItem from="1648788961437" duration="14289000" />
+      <workItem from="1648788961437" duration="15514000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1648619376251</created>
@@ -113,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648796993317</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="style">
+      <created>1648811000890</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1648811000890</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +138,7 @@
     <MESSAGE value="pagination" />
     <MESSAGE value="rtq query, redux" />
     <MESSAGE value="custom card, style" />
-    <option name="LAST_COMMIT_MESSAGE" value="custom card, style" />
+    <MESSAGE value="style" />
+    <option name="LAST_COMMIT_MESSAGE" value="style" />
   </component>
 </project>

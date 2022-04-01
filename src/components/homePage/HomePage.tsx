@@ -1,7 +1,7 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {
     AppBar,
-    Button, Card,
+    Button,
     CircularProgress,
     Container,
     Grid, Skeleton,
@@ -133,9 +133,11 @@ export const HomePage = () => {
                 })}
                 {loading && skeletonList.map((_, i) => (
                     <Grid item md={4} sm={6} xs={12} key={i}>
-                        <Skeleton variant="rectangular" width={250} height={250}/>
-                        <Skeleton width="150px"/>
-                        <Skeleton width="100px"/>
+                       <div>
+                           <Skeleton variant="rectangular" width={250} height={250}/>
+                           <Skeleton width="150px"/>
+                           <Skeleton width="100px"/>
+                       </div>
                     </Grid>
                 ))}
             </Grid>
