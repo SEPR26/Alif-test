@@ -31,14 +31,7 @@ export const HomePage = () => {
 
     const matchRegExp = new RegExp(searchText, 'i');
 
-    const posts = useMemo(
-        () => storePosts.filter(({title}) => (
-            searchText !== ''
-                ? Boolean(title.match(matchRegExp))
-                : true
-        )),
-        [searchText, storePosts]
-    );
+    const hasPosts = storePosts.length < 100;
 
     const fetchPosts = async (start: number) => {
         const {data = []} = await getPosts({start: start * limit, limit});
@@ -63,12 +56,22 @@ export const HomePage = () => {
 
     const handleAlignment = (
         event: React.MouseEvent<HTMLElement>,
-        newAlignment: string | null,
+        newAlignment: string | null
     ) => {
         setAlignment(newAlignment);
     };
 
     const skeletonList = Array.from({length: limit});
+
+    const posts = useMemo(
+        () => storePosts.filter(({title}) => (
+            searchText !== ''
+                ? Boolean(title.match(matchRegExp))
+                : true
+        )),
+        [searchText, storePosts]
+    );
+
 
     useEffect(() => {
         fetchPosts(0);
@@ -92,19 +95,34 @@ export const HomePage = () => {
                         onChange={handleAlignment}
                         aria-label="text alignment"
                     >
-                        <ToggleButton value="left" aria-label="left aligned" onClick={limitTagHandle(10)}>
+                        <ToggleButton
+                            value="left"
+                            aria-label="left aligned"
+                            className="toggle-btn"
+                            onClick={limitTagHandle(10)}
+                        >
                             By 10
                         </ToggleButton>
-                        <ToggleButton value="center" aria-label="centered" onClick={limitTagHandle(20)}>
+                        <ToggleButton
+                            value="center"
+                            aria-label="centered"
+                            className="toggle-btn"
+                            onClick={limitTagHandle(20)}
+                        >
                             By 20
                         </ToggleButton>
-                        <ToggleButton value="right" aria-label="right aligned" onClick={limitTagHandle(50)}>
+                        <ToggleButton
+                            value="right"
+                            aria-label="right aligned"
+                            className="toggle-btn"
+                            onClick={limitTagHandle(50)}
+                        >
                             By 50
                         </ToggleButton>
                     </ToggleButtonGroup>
                 </Toolbar>
             </AppBar>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} style={{marginTop: 100}}>
                 {posts.map((post) => {
                     const {id} = post;
                     return (
@@ -115,18 +133,25 @@ export const HomePage = () => {
                 })}
                 {loading && skeletonList.map((_, i) => (
                     <Grid item md={4} sm={6} xs={12} key={i}>
-                        <Card sx={{width: 250}}>
-                            <Skeleton variant="rectangular" width={250} height={200}/>
-                            <Skeleton width="150px"/>
-                            <Skeleton width="100px"/>
-                        </Card>
+                        <Skeleton variant="rectangular" width={250} height={250}/>
+                        <Skeleton width="150px"/>
+                        <Skeleton width="100px"/>
                     </Grid>
                 ))}
             </Grid>
-            {loading
-                ? <CircularProgress/>
-                : <Button onClick={paginationHandle}>Show more</Button>
-            }
+            <div className="show-more">
+                {loading
+                    ? <CircularProgress/>
+                    : (hasPosts && (
+                        <Button
+                            variant="contained"
+                            onClick={paginationHandle}
+                        >
+                            Show more
+                        </Button>
+                    ))}
+            </div>
+
         </Container>
     );
 };
