@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6dfeaeaf-236f-4b98-86be-b9b6535c2bf6" name="Changes" comment="pagination">
-      <change afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/slicies/postsSlice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
+    <list default="true" id="6dfeaeaf-236f-4b98-86be-b9b6535c2bf6" name="Changes" comment="rtq query, redux">
+      <change afterPath="$PROJECT_DIR$/src/components/customCard/CustomCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/customCard/useStyles.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/homePage/useStyles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/homePage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/HomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ox-test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test-nova" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -59,6 +60,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\alif-test\src\store\slicies" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\projects\alif-test\src" />
     </key>
@@ -73,7 +77,9 @@
       <updated>1648618458607</updated>
       <workItem from="1648618460291" duration="6997000" />
       <workItem from="1648661705689" duration="6464000" />
-      <workItem from="1648736620132" duration="18745000" />
+      <workItem from="1648736620132" duration="23478000" />
+      <workItem from="1648781245960" duration="1930000" />
+      <workItem from="1648788961437" duration="7193000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1648619376251</created>
@@ -96,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648668331716</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="rtq query, redux">
+      <created>1648759527244</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1648759527244</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +129,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start" />
     <MESSAGE value="pagination" />
-    <option name="LAST_COMMIT_MESSAGE" value="pagination" />
+    <MESSAGE value="rtq query, redux" />
+    <option name="LAST_COMMIT_MESSAGE" value="rtq query, redux" />
   </component>
 </project>
