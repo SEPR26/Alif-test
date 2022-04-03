@@ -13,8 +13,12 @@ import {postsApi} from '../../api/api';
 import {RootState} from '../../store/store';
 import {useStyles} from './useStyles';
 import {CustomCard} from '../customCard/CustomCard';
+import {PostsType, TagListEnum} from '../../types';
+
+type TagType = keyof typeof TagListEnum;
 
 export const HomePage = () => {
+
     const dispatch = useDispatch();
     const storePosts = useSelector((state: RootState) => state.posts);
     const [getPosts, {isFetching: postsLoading}] = postsApi.endpoints.posts.useLazyQuery();
@@ -22,17 +26,36 @@ export const HomePage = () => {
 
     const [start, setStart] = useState(0);
     const [limit, setLimit] = useState(10);
-
     const [searchText, setSearchText] = useState('');
-
     const [alignment, setAlignment] = useState<string | null>('left');
+    const [tags, setTags] = useState<TagType[]>([]);
 
+    // Values
+    const tagListKeys = Object.keys(TagListEnum);
     const loading = postsLoading || postsByLimitLoading;
-
     const matchRegExp = new RegExp(searchText, 'i');
-
+    const skeletonList = Array.from({length: limit});
     const hasPosts = storePosts.length < 100;
 
+    const posts = useMemo(
+        () => storePosts.filter(post => {
+            const {title, body} = post;
+            if (searchText !== '') {
+                if (tags.length === 0 || tags.length === tagListKeys.length) { // If select all tags or nothing
+                    return searchInAllTags(post);
+                }
+                if (tags.some(item => item === 'title')) {
+                    return Boolean(title.match(matchRegExp));
+                }
+                if (tags.some(item => item === 'body')) {
+                    return Boolean(body.match(matchRegExp));
+                }
+            }
+            return true;
+        }),
+        [searchText, storePosts, tags]);
+
+    // Handlers
     const fetchPosts = async (start: number) => {
         const {data = []} = await getPosts({start: start * limit, limit});
         dispatch(setPosts(data));
@@ -61,22 +84,24 @@ export const HomePage = () => {
         setAlignment(newAlignment);
     };
 
-    const skeletonList = Array.from({length: limit});
+    const handleFormat = (
+        event: React.MouseEvent<HTMLElement>,
+        newFormats: TagType[]
+    ) => {
+        setTags(newFormats);
+    };
 
-    const posts = useMemo(
-        () => storePosts.filter(({title}) => (
-            searchText !== ''
-                ? Boolean(title.match(matchRegExp))
-                : true
-        )),
-        [searchText, storePosts]
-    );
+    const searchInAllTags = (post: PostsType) => {
+        return (tagListKeys as TagType[])
+            .some((key) => {
+                return Boolean(post[key].match(matchRegExp));
+            });
+    };
 
-
+    // Effects
     useEffect(() => {
         fetchPosts(0);
     }, []);
-
 
     const classes = useStyles();
 
@@ -89,6 +114,27 @@ export const HomePage = () => {
                         placeholder="Search..."
                         onChange={e => setSearchText(e.target.value)}
                     />
+                    <ToggleButtonGroup
+                        value={tags}
+                        onChange={handleFormat}
+                        aria-label="text formatting"
+                    >
+                        <ToggleButton
+                            value={TagListEnum.title}
+                            aria-label="left aligned"
+                            className="toggle-btn"
+                        >
+                            Find by title
+                        </ToggleButton>
+                        <ToggleButton
+                            value={TagListEnum.body}
+                            aria-label="left aligned"
+                            className="toggle-btn"
+                        >
+                            Find by description
+                        </ToggleButton>
+                    </ToggleButtonGroup>
+
                     <ToggleButtonGroup
                         value={alignment}
                         exclusive
@@ -133,11 +179,11 @@ export const HomePage = () => {
                 })}
                 {loading && skeletonList.map((_, i) => (
                     <Grid item md={4} sm={6} xs={12} key={i}>
-                       <div>
-                           <Skeleton variant="rectangular" width={250} height={250}/>
-                           <Skeleton width="150px"/>
-                           <Skeleton width="100px"/>
-                       </div>
+                        <div>
+                            <Skeleton variant="rectangular" width={250} height={250}/>
+                            <Skeleton width="150px"/>
+                            <Skeleton width="100px"/>
+                        </div>
                     </Grid>
                 ))}
             </Grid>
@@ -153,7 +199,6 @@ export const HomePage = () => {
                         </Button>
                     ))}
             </div>
-
         </Container>
     );
 };

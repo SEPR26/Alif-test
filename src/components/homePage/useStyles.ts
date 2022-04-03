@@ -35,16 +35,21 @@ export const useStyles = makeStyles((theme: Theme) => ({
         '& button.toggle-btn': {
             textTransform: 'none',
             padding: '10px 25px',
-            color: '#FFF',
+            color: 'rgba(0,0,0,0.8)',
             fontSize: '1rem',
             fontWeight: '800',
-            background: 'rgba(119, 51, 254, 0.7)',
+            background: '#ededff',
             [theme.breakpoints.down('md')]: {
                 padding: '10px'
             }
         },
         '& button.Mui-selected': {
-            background: 'rgba(78, 7, 254, 1)'
+            background: 'rgba(78, 7, 254, 1)',
+            color: '#FFF',
+            '&:hover': {
+                backgroundColor: 'rgba(78, 7, 254, 1)',
+                color: '#FFF',
+            }
         },
         '& div.show-more': {
             margin: '20px 0',

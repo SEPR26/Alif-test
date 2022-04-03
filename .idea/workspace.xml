@@ -4,6 +4,8 @@
     <list default="true" id="6dfeaeaf-236f-4b98-86be-b9b6535c2bf6" name="Changes" comment="style">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/homePage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homePage/useStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/useStyles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../slondo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -72,7 +74,9 @@
       <workItem from="1648661705689" duration="6464000" />
       <workItem from="1648736620132" duration="23478000" />
       <workItem from="1648781245960" duration="1930000" />
-      <workItem from="1648788961437" duration="15514000" />
+      <workItem from="1648788961437" duration="16151000" />
+      <workItem from="1648825289092" duration="7227000" />
+      <workItem from="1648916811578" duration="12755000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1648619376251</created>
@@ -116,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648811000890</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="style">
+      <created>1648812197064</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1648812197064</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
