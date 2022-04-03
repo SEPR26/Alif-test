@@ -9,19 +9,23 @@ export const useStyles = makeStyles((theme: Theme) => ({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-around',
-                [theme.breakpoints.down('sm')]: {
+                [theme.breakpoints.down('lg')]: {
                     flexWrap: 'wrap'
                 }
             },
-            '& input': {
-                padding: '10px 100px 10px 10px',
-                [theme.breakpoints.down('sm')]: {
-                    padding: '10px 25px 10px 10px'
+            '& div.MuiFormControl-root': {
+                [theme.breakpoints.down('md')]: {
+                    margin: '10px'
+                },
+                '& input': {
+                    padding: '13px 100px 14px 10px',
+                    [theme.breakpoints.down('sm')]: {
+                        padding: '10px 25px 10px 10px'
+                    }
                 }
             },
-
             '& div.MuiToggleButtonGroup-root': {
-                [theme.breakpoints.down('sm')]: {
+                [theme.breakpoints.down('lg')]: {
                     margin: '10px'
                 }
             }
@@ -41,6 +45,9 @@ export const useStyles = makeStyles((theme: Theme) => ({
             background: '#ededff',
             [theme.breakpoints.down('md')]: {
                 padding: '10px'
+            },
+            [theme.breakpoints.down('sm')]: {
+                fontSize: '12px'
             }
         },
         '& button.Mui-selected': {
@@ -48,7 +55,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
             color: '#FFF',
             '&:hover': {
                 backgroundColor: 'rgba(78, 7, 254, 1)',
-                color: '#FFF',
+                color: '#FFF'
             }
         },
         '& div.show-more': {

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6dfeaeaf-236f-4b98-86be-b9b6535c2bf6" name="Changes" comment="style">
+    <list default="true" id="6dfeaeaf-236f-4b98-86be-b9b6535c2bf6" name="Changes" comment="Search by tags">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/homePage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/HomePage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/homePage/useStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/useStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +75,7 @@
       <workItem from="1648781245960" duration="1930000" />
       <workItem from="1648788961437" duration="16151000" />
       <workItem from="1648825289092" duration="7227000" />
-      <workItem from="1648916811578" duration="12755000" />
+      <workItem from="1648916811578" duration="13401000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1648619376251</created>
@@ -127,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648812197064</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Search by tags">
+      <created>1648969905997</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1648969905997</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +156,7 @@
     <MESSAGE value="rtq query, redux" />
     <MESSAGE value="custom card, style" />
     <MESSAGE value="style" />
-    <option name="LAST_COMMIT_MESSAGE" value="style" />
+    <MESSAGE value="Search by tags" />
+    <option name="LAST_COMMIT_MESSAGE" value="Search by tags" />
   </component>
 </project>

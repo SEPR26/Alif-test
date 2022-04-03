@@ -131,7 +131,7 @@ export const HomePage = () => {
                             aria-label="left aligned"
                             className="toggle-btn"
                         >
-                            Find by description
+                            Find by body
                         </ToggleButton>
                     </ToggleButtonGroup>
 
