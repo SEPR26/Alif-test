@@ -37,24 +37,6 @@ export const HomePage = () => {
     const skeletonList = Array.from({length: limit});
     const hasPosts = storePosts.length < 100;
 
-    const posts = useMemo(
-        () => storePosts.filter(post => {
-            const {title, body} = post;
-            if (searchText !== '') {
-                if (tags.length === 0 || tags.length === tagListKeys.length) { // If select all tags or nothing
-                    return searchInAllTags(post);
-                }
-                if (tags.some(item => item === 'title')) {
-                    return Boolean(title.match(matchRegExp));
-                }
-                if (tags.some(item => item === 'body')) {
-                    return Boolean(body.match(matchRegExp));
-                }
-            }
-            return true;
-        }),
-        [searchText, storePosts, tags]);
-
     // Handlers
     const fetchPosts = async (start: number) => {
         const {data = []} = await getPosts({start: start * limit, limit});
@@ -99,6 +81,24 @@ export const HomePage = () => {
     };
 
     // Effects
+    const posts = useMemo(
+        () => storePosts.filter(post => {
+            const {title, body} = post;
+            if (searchText !== '') {
+                if (tags.length === 0 || tags.length === tagListKeys.length) { // If select all tags or nothing
+                    return searchInAllTags(post);
+                }
+                if (tags.some(item => item === 'title')) {
+                    return Boolean(title.match(matchRegExp));
+                }
+                if (tags.some(item => item === 'body')) {
+                    return Boolean(body.match(matchRegExp));
+                }
+            }
+            return true;
+        }),
+        [searchText, storePosts, tags]);
+
     useEffect(() => {
         fetchPosts(0);
     }, []);

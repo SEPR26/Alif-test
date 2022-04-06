@@ -1,4 +1,4 @@
-import React, {FC, forwardRef, useState} from 'react';
+import React, {FC, useState} from 'react';
 import {
     Card,
     CardActionArea,
@@ -7,24 +7,21 @@ import {
     Dialog,
     DialogContent, DialogContentText,
     DialogTitle,
-    Modal, Slide,
     Typography
 } from '@mui/material';
 import {postsApi} from '../../api/api';
 import {useStyles} from './useStyles';
-import {TransitionProps} from '@mui/material/transitions';
 
 type CustomCard = {
     post: any
 }
 
 export const CustomCard: FC<CustomCard> = ({post}) => {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const {id, title, body} = post;
 
     const photoUrl = postsApi.endpoints.photosById.useQuery(id).data?.thumbnailUrl;
-    ;
 
     const handleClickOpen = () => {
         setOpen(true);
