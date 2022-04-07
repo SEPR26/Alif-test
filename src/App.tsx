@@ -9,7 +9,6 @@ import {createTheme, responsiveFontSizes} from '@mui/material/styles';
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
-
 function App() {
     return (
         <Provider store={store}>
